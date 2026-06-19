@@ -30,6 +30,8 @@ HINGLISH_MARKERS = {
     "kamra", "room", "booking", "kitna", "kitne", "paisa", "rupees",
     "bhai", "yaar", "bhen", "didi", "bhaiya", "ji", "haan", "hna",
     "aur", "lekin", "toh", "par", "mein", "se", "ko", "ka", "ki",
+    "kar", "karo", "karna", "sakte", "sakta", "sakti",
+    "din", "liye", "wala", "wali", "ho", "gaya", "gayi",
 }
 
 

@@ -74,6 +74,91 @@ class TestHinglish:
         assert r["language"] == "hinglish"
 
 
+
+# ── Hinglish Extended ─────────────────────────────────────────────────────────
+class TestHinglishExtended:
+    def test_room_available(self):
+        r = detect_language("bhai room available hai?")
+        assert r["language"] == "hinglish"
+
+    def test_kitna_charge(self):
+        r = detect_language("kitna charge hoga ek raat ka")
+        assert r["language"] == "hinglish"
+
+    def test_checkout_kab(self):
+        r = detect_language("checkout kab hai")
+        assert r["language"] == "hinglish"
+
+    def test_pool_hai_kya(self):
+        r = detect_language("pool hai kya hotel mein")
+        assert r["language"] == "hinglish"
+
+    def test_ac_room_chahiye(self):
+        r = detect_language("ac room chahiye")
+        assert r["language"] == "hinglish"
+
+    def test_late_checkout(self):
+        r = detect_language("late checkout chahiye")
+        assert r["language"] == "hinglish"
+
+    def test_discount_milega(self):
+        r = detect_language("koi discount milega")
+        assert r["language"] == "hinglish"
+
+    def test_online_payment(self):
+        r = detect_language("online payment kar sakte hai")
+        assert r["language"] == "hinglish"
+
+    def test_parking_available(self):
+        r = detect_language("parking available hai kya")
+        assert r["language"] == "hinglish"
+
+    def test_breakfast_milega(self):
+        r = detect_language("subah breakfast milega kya")
+        assert r["language"] == "hinglish"
+
+    def test_booking_confirm(self):
+        r = detect_language("booking confirm ho gayi kya")
+        assert r["language"] == "hinglish"
+
+    def test_cancel_karna(self):
+        r = detect_language("booking cancel karna hai")
+        assert r["language"] == "hinglish"
+
+    def test_extra_bed(self):
+        r = detect_language("extra bed milega kya")
+        assert r["language"] == "hinglish"
+
+    def test_do_din(self):
+        r = detect_language("do din ke liye book karna hai")
+        assert r["language"] == "hinglish"
+
+    def test_price_batao(self):
+        r = detect_language("bhai price batao na")
+        assert r["language"] == "hinglish"
+
+    def test_refund_kab(self):
+        r = detect_language("refund kab aayega")
+        assert r["language"] == "hinglish"
+
+    def test_wifi_password(self):
+        r = detect_language("wifi ka password kya hai")
+        assert r["language"] == "hinglish"
+
+    def test_room_change(self):
+        r = detect_language("room change ho sakta hai")
+        assert r["language"] == "hinglish"
+
+    def test_geyser_hai(self):
+        r = detect_language("geyser hai room mein")
+        assert r["language"] == "hinglish"
+
+    def test_aaj_ke_liye(self):
+        r = detect_language("aaj ke liye room chahiye")
+        assert r["language"] == "hinglish"
+
+        
+
 # ── Mixed script ──────────────────────────────────────────────────────────────
 class TestMixedScript:
     def test_mixed_devanagari_and_latin(self):
@@ -108,3 +193,6 @@ class TestEdgeCases:
         assert "script" in r
         assert "confidence" in r
         assert 0.0 <= r["confidence"] <= 1.0
+
+
+
