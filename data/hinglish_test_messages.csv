@@ -1,0 +1,51 @@
+message,expected_language,expected_intent,notes
+bhai room available hai?,hinglish,booking,Classic availability check
+kitna charge hoga ek raat ka,hinglish,booking,Price inquiry
+checkout kab hai,hinglish,hotel_question,Checkout time query
+pool hai kya hotel mein,hinglish,hotel_question,Amenity question
+ac room chahiye,hinglish,booking,Room type preference
+ek room book karna hai aaj ke liye,hinglish,booking,Same day booking
+payment kaise karu,hinglish,payment,Payment method query
+wifi ka password kya hai,hinglish,hotel_question,WiFi query
+breakfast milega kya,hinglish,hotel_question,Food amenity query
+late checkout ho sakta hai kya,hinglish,hotel_question,Late checkout request
+double bed room available hai kya,hinglish,show_rooms,Room type query
+discount milega kya,hinglish,booking,Discount inquiry
+online payment kar sakte hai,hinglish,payment,Online payment query
+refund kab aayega,hinglish,payment,Refund status
+hotel station ke paas hai kya,hinglish,hotel_question,Location query
+parking available hai,hinglish,hotel_question,Parking inquiry
+kitne log reh sakte hai ek room mein,hinglish,hotel_question,Occupancy query
+geyser hai room mein,hinglish,hotel_question,Hot water query
+aaj ke liye room chahiye,hinglish,booking,Same day booking
+kal checkout karna hai,hinglish,booking,Checkout date
+do din ke liye book karna hai,hinglish,booking,Multi-day booking
+booking confirm ho gayi kya,hinglish,booking,Confirmation check
+booking cancel karna hai,hinglish,booking,Cancellation request
+receipt bhejo please,hinglish,payment,Receipt request
+room change ho sakta hai,hinglish,hotel_question,Room change request
+extra bed milega kya,hinglish,hotel_question,Extra bed request
+price batao na bhai,hinglish,booking,Informal price inquiry
+koi acha room dikhao,hinglish,show_rooms,Room browsing
+single room kitne ka hai,hinglish,booking,Single room pricing
+family room available hai,hinglish,show_rooms,Family room query
+check in time kya hai,hinglish,hotel_question,Check-in time query
+early checkin ho sakta hai,hinglish,hotel_question,Early check-in request
+kya pet allowed hai,hinglish,hotel_question,Pet policy query
+laundry service hai kya,hinglish,hotel_question,Laundry query
+room service milega kya,hinglish,hotel_question,Room service query
+ac kaam nahi kar raha,hinglish,human,AC complaint
+garam paani nahi aa raha,hinglish,human,Hot water complaint
+noise bahut hai,hinglish,human,Noise complaint
+housekeeping bhejo please,hinglish,hotel_question,Housekeeping request
+cab service hai hotel ki,hinglish,hotel_question,Transport query
+near koi restaurant hai kya,hinglish,hotel_question,Food nearby query
+namaste bhai,hinglish,greeting,Informal greeting
+haan ji bolo,hinglish,greeting,Acknowledgement
+theek hai confirm karo,hinglish,booking,Booking confirmation
+kitna deposit lagega,hinglish,payment,Deposit inquiry
+UPI se pay kar sakte hai,hinglish,payment,UPI payment query
+cash bhi chalega kya,hinglish,payment,Cash payment query
+invoice bhej do,hinglish,payment,Invoice request
+manager se baat karni hai,hinglish,human,Escalation request
+aap se baat karni hai,hinglish,human,Human agent request
