@@ -20,8 +20,8 @@ geyser hai room mein,hinglish,hotel_question,Hot water query
 aaj ke liye room chahiye,hinglish,booking,Same day booking
 kal checkout karna hai,hinglish,booking,Checkout date
 do din ke liye book karna hai,hinglish,booking,Multi-day booking
-booking confirm ho gayi kya,hinglish,booking,Confirmation check
-booking cancel karna hai,hinglish,booking,Cancellation request
+booking confirm ho gayi kya,hinglish,existing_booking,Confirmation check
+booking cancel karna hai,hinglish,cancel,Cancellation request
 receipt bhejo please,hinglish,payment,Receipt request
 room change ho sakta hai,hinglish,hotel_question,Room change request
 extra bed milega kya,hinglish,hotel_question,Extra bed request
