@@ -1,6 +1,6 @@
 """
 Language detection service.
-Owner: Ridhimaa (reviewed by co-lead before merge)
+Owner: Riddhima (reviewed by co-lead before merge)
 
 Detects whether a WhatsApp message is English, Hindi, Hinglish, or other.
 Uses langdetect + Unicode range analysis — zero LLM cost, near-zero latency.
@@ -31,7 +31,7 @@ HINGLISH_MARKERS = {
     "bhai", "yaar", "bhen", "didi", "bhaiya", "ji", "haan", "hna",
     "aur", "lekin", "toh", "par", "mein", "se", "ko", "ka", "ki",
     "kar", "karo", "karna", "sakte", "sakta", "sakti",
-    "din", "liye", "wala", "wali", "ho", "gaya", "gayi",
+    "din", "liye", "wala", "wali", "ho", "gaya", "gayi", "bhejo", "bhej", "garam", "paani", "raha", "do", "aa",
 }
 
 

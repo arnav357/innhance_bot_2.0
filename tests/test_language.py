@@ -1,6 +1,6 @@
 """
 Tests for the language detection service.
-Owner: Ridhimaa
+Owner: Riddhima
 
 Run with:  pytest tests/test_language.py -v
 """
@@ -157,6 +157,126 @@ class TestHinglishExtended:
         r = detect_language("aaj ke liye room chahiye")
         assert r["language"] == "hinglish"
 
+
+    def test_payment_method(self):
+        r = detect_language("payment kaise karu")
+        assert r["language"] == "hinglish"
+
+    def test_double_bed_room(self):
+        r = detect_language("double bed room available hai kya")
+        assert r["language"] == "hinglish"
+
+    def test_hotel_near_station(self):
+        r = detect_language("hotel station ke paas hai kya")
+        assert r["language"] == "hinglish"
+
+    def test_occupancy_query(self):
+        r = detect_language("kitne log reh sakte hai ek room mein")
+        assert r["language"] == "hinglish"
+
+    def test_checkout_date(self):
+        r = detect_language("kal checkout karna hai")
+        assert r["language"] == "hinglish"
+
+    def test_receipt_request(self):
+        r = detect_language("receipt bhejo please")
+        assert r["language"] == "hinglish"
+
+    def test_room_browsing(self):
+        r = detect_language("koi acha room dikhao")
+        assert r["language"] == "hinglish"
+
+    def test_single_room_price(self):
+        r = detect_language("single room kitne ka hai")
+        assert r["language"] == "hinglish"
+
+    def test_family_room(self):
+        r = detect_language("family room available hai")
+        assert r["language"] == "hinglish"
+
+    def test_checkin_time(self):
+        r = detect_language("check in time kya hai")
+        assert r["language"] == "hinglish"
+
+    def test_early_checkin(self):
+        r = detect_language("early checkin ho sakta hai")
+        assert r["language"] == "hinglish"
+
+    def test_pet_policy(self):
+        r = detect_language("kya pet allowed hai")
+        assert r["language"] == "hinglish"
+
+    def test_laundry_service(self):
+        r = detect_language("laundry service hai kya")
+        assert r["language"] == "hinglish"
+
+    def test_room_service(self):
+        r = detect_language("room service milega kya")
+        assert r["language"] == "hinglish"
+
+    def test_ac_complaint(self):
+        r = detect_language("ac kaam nahi kar raha")
+        assert r["language"] == "hinglish"
+
+    def test_hot_water_complaint(self):
+        r = detect_language("garam paani nahi aa raha")
+        assert r["language"] == "hinglish"
+
+    def test_noise_complaint(self):
+        r = detect_language("noise bahut hai")
+        assert r["language"] == "hinglish"
+
+    def test_housekeeping_request(self):
+        r = detect_language("housekeeping bhejo please")
+        assert r["language"] == "hinglish"
+
+    def test_cab_service(self):
+        r = detect_language("cab service hai hotel ki")
+        assert r["language"] == "hinglish"
+
+    def test_restaurant_nearby(self):
+        r = detect_language("near koi restaurant hai kya")
+        assert r["language"] == "hinglish"
+
+    def test_informal_greeting(self):
+        r = detect_language("namaste bhai")
+        assert r["language"] == "hinglish"
+
+    def test_acknowledgement(self):
+        r = detect_language("haan ji bolo")
+        assert r["language"] == "hinglish"
+
+    def test_booking_confirmation(self):
+        r = detect_language("theek hai confirm karo")
+        assert r["language"] == "hinglish"
+
+    def test_deposit_inquiry(self):
+        r = detect_language("kitna deposit lagega")
+        assert r["language"] == "hinglish"
+
+    def test_upi_payment(self):
+        r = detect_language("UPI se pay kar sakte hai")
+        assert r["language"] == "hinglish"
+
+    def test_cash_payment(self):
+        r = detect_language("cash bhi chalega kya")
+        assert r["language"] == "hinglish"
+
+    def test_invoice_request(self):
+        r = detect_language("invoice bhej do")
+        assert r["language"] == "hinglish"
+
+    def test_escalation_request(self):
+        r = detect_language("manager se baat karni hai")
+        assert r["language"] == "hinglish"
+
+    def test_human_agent_request(self):
+        r = detect_language("aap se baat karni hai")
+        assert r["language"] == "hinglish"
+
+    def test_informal_price_inquiry(self):
+        r = detect_language("price batao na bhai")
+        assert r["language"] == "hinglish"
         
 
 # ── Mixed script ──────────────────────────────────────────────────────────────
