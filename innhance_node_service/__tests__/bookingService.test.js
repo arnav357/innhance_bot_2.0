@@ -1,4 +1,4 @@
-const { slotsToData, mergeBooking } = require("../services/bookingService");
+const { slotsToData, mergeBooking, getMissing } = require("../services/bookingService");
 
 describe("slotsToData", () => {
   test("maps each slot field individually", () => {
@@ -95,5 +95,49 @@ describe("mergeBooking — multi-turn persistence with slotsToData", () => {
       planName: "All Inclusive",
       name: "Hey There",
     });
+  });
+});
+
+describe("getMissing", () => {
+  const hotelWithPlans = {
+    rooms: [
+      { name: "Deluxe", price: 5000, plans: [{ name: "Breakfast Included", price: 5500 }] },
+    ],
+  };
+
+  test('returns "roomsCount" when all earlier slots are filled but roomsCount is missing', () => {
+    const data = {
+      roomType: "Deluxe",
+      name: "Hey There",
+      checkIn: "01-07-2026",
+      checkOut: "03-07-2026",
+      guests: 2,
+    };
+    expect(getMissing(data, hotelWithPlans)).toBe("roomsCount");
+  });
+
+  test('returns "planName" (not "roomsCount") once roomsCount is set, for a hotel where the room has plans', () => {
+    const data = {
+      roomType: "Deluxe",
+      name: "Hey There",
+      checkIn: "01-07-2026",
+      checkOut: "03-07-2026",
+      guests: 2,
+      roomsCount: 1,
+    };
+    expect(getMissing(data, hotelWithPlans)).toBe("planName");
+  });
+
+  test("returns null only once every slot including roomsCount is present", () => {
+    const data = {
+      roomType: "Deluxe",
+      name: "Hey There",
+      checkIn: "01-07-2026",
+      checkOut: "03-07-2026",
+      guests: 2,
+      roomsCount: 1,
+      planName: "Breakfast Included",
+    };
+    expect(getMissing(data, hotelWithPlans)).toBeNull();
   });
 });

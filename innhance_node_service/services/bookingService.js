@@ -33,9 +33,8 @@ function getMissing(data = {}, hotel) {
   if (!data.name) return "name";
   if (!data.checkIn) return "checkIn";
   if (!data.checkOut) return "checkOut";
-
-  // Temporarily assume one room until the classifier supports rooms_count.
   if (!data.guests) return "guests";
+  if (!data.roomsCount) return "roomsCount";
 
   const room = hotel.rooms?.find(
     (r) => r.name.toLowerCase() === String(data.roomType).toLowerCase()
