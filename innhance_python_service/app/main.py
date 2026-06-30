@@ -15,7 +15,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import get_settings
-from app.routers import health, language, classify, rag, payment
+from app.routers import health, language, classify, rag, payment, reply
 
 settings = get_settings()
 
@@ -67,11 +67,13 @@ async def global_exception_handler(request: Request, exc: Exception):
     )
 
 
+
 # ── Routers ───────────────────────────────────────────────────────────────────
 app.include_router(health.router)
 app.include_router(language.router)
 app.include_router(classify.router)
 app.include_router(rag.router)
 app.include_router(payment.router)
+app.include_router(reply.router)
 
-logger.info("routes registered: /health /detect-language /classify /ingest /retrieve /verify-payment")
+logger.info("routes registered: /health /detect-language /classify /ingest /retrieve /verify-payment /reply")
