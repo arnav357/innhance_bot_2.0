@@ -1,4 +1,4 @@
-"""Language detection router. Owner: Ridhimaa."""
+"""Language detection router. Owner: Riddhima."""
 from fastapi import APIRouter
 from app.models.schemas import DetectLanguageRequest, DetectLanguageResponse
 from app.services.language import detect_language
