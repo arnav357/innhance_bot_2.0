@@ -11,6 +11,8 @@ function slotsToData(slots = {}) {
   if (slots.guest_count != null) out.guests = slots.guest_count;
   if (slots.guest_name) out.name = slots.guest_name;
   if (slots.guest_phone) out.phone = slots.guest_phone;
+  if (slots.rooms_count != null) out.roomsCount = slots.rooms_count;
+  if (slots.plan_name) out.planName = slots.plan_name;
   return out;
 }
 
