@@ -1,51 +1,42 @@
+require("dotenv").config();
+const connectDB = require("../config/database");
+
 const { Worker } = require("bullmq");
 
-const {
-  connection,
-} = require("../queues/messageQueue");
+const { connection } = require("../queues/messageQueue");
 
-const {
-  classifyIntent,
-} = require("../services/aiService");
-
+const { processIncomingMessage } = require("../services/messageProcessor");
+console.log("Redis URL:", process.env.UPSTASH_REDIS_URL);
 const worker = new Worker(
   "incoming-messages",
 
   async (job) => {
+    await connectDB();
     console.log(
-      "Processing:",
-      job.data.message
+      `Processing message from ${job.data.value.messages?.[0]?.from}`,
     );
 
-    const intent = await classifyIntent({
-      venueId: job.data.hotelId,
-      message: job.data.message,
-      history: job.data.history || [],
-      language: "en",
-    });
+    try {
+      await processIncomingMessage({
+        value: job.data.value,
+      });
+    } catch (err) {
+      console.error(err);
+      throw err; // BullMQ will retry
+    }
 
-    console.log(
-      "Intent:",
-      JSON.stringify(intent, null, 2)
-    );
-
-    return intent;
+    console.log("Finished processing message.");
   },
 
   {
     connection,
-  }
+  },
 );
 
 worker.on("completed", (job) => {
-  console.log(
-    `Job ${job.id} completed`
-  );
+  console.log(`Job ${job.id} completed`);
 });
 
 worker.on("failed", (job, err) => {
-  console.error(
-    `Job ${job?.id} failed`,
-    err
-  );
+  console.error(`Job ${job?.id} failed`, err);
 });
