@@ -5,17 +5,8 @@ const mongoose  = require('mongoose');
 const verifyToken    = require('./middleware/authMiddleware');
 
 // ===== CONNECT TO MONGODB =====
-mongoose.connect(process.env.MONGODB_URI)
-  .then(async () => {
-    console.log('✅ MongoDB Connected');
-    try {
-      await mongoose.connection.syncIndexes();
-      console.log('✅ MongoDB indexes synced');
-    } catch (err) {
-      console.log('⚠️ MongoDB index sync skipped:', err.message);
-    }
-  })
-  .catch(err => console.log('❌ MongoDB Error:', err));
+const connectDB = require("./config/database");
+connectDB();
 
 const app = express();
 app.use(cors());
